@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\Api\LoginApiController;
+use App\Http\Controllers\Api\ProductApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+Route::prefix('v1')->group(function () {
+
+    Route::get('products', [ProductApiController::class, 'index'])->name('products.list');
+
+    Route::post('register_admin', [LoginApiController::class, 'register']);
+
+    Route::post('login_admin', [LoginApiController::class, 'adminLogin']);
 });

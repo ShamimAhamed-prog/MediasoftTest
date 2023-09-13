@@ -46,8 +46,8 @@
                 </a>
                 <div id="collapseUser" class="collapse" aria-labelledby="headingUser" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/login">Add product</a>
-                        <a class="collapse-item" href="/login">Product List </a>
+                        <a class="collapse-item" href="{{route('products.create')}}">Add product</a>
+                        <a class="collapse-item" href="{{route('products.index')}}">Product List </a>
                         <a class="collapse-item" href="/login">Product Cart List </a>
                     </div>
                 </div>
