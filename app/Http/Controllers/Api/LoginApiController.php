@@ -37,7 +37,7 @@ public function register(Request $request)
     $validator = Validator::make($request->all(), [
         'email' => 'required|email|unique:users',
         'name' => 'required',
-        'password' => 'required|min:8',
+        'password' => 'required',
     ]);
 
     if ($validator->fails()) {

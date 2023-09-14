@@ -40,7 +40,7 @@ class AdminLoginController extends Controller
         $request->validate([
             'email' => 'required|email|unique:users',
             'name' => 'required',
-            'password' => 'required|min:8',
+            'password' => 'required',
         ]);
     
         $user = User::create([

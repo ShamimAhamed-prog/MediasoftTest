@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\Api\CartApiController;
 use App\Http\Controllers\Api\LoginApiController;
 use App\Http\Controllers\Api\ProductApiController;
 use Illuminate\Http\Request;
@@ -27,4 +28,5 @@ Route::prefix('v1')->group(function () {
     Route::post('register_admin', [LoginApiController::class, 'register']);
 
     Route::post('login_admin', [LoginApiController::class, 'adminLogin']);
+    Route::post('cart_add', [CartApiController::class, 'addToCart']);
 });

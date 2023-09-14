@@ -11,6 +11,11 @@ class ProductApiController extends Controller
     public function index()
     {
         $products = Product::all(); // Fetch all products from the database
+        
+        $products->transform(function ($product) {
+            $product->image_url = asset('images/products/' . $product->image);
+            return $product;
+        });
         return response()->json(['products' => $products], 200);
     }
 }
