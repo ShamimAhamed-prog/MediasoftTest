@@ -54,7 +54,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="/register/admin">Create a New One!</a>
                                     </div>
                                 </div>
                             </div>
